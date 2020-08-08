@@ -38,7 +38,13 @@ train - to actually train the data
 trainArray2 = 478
 testArray2 = 210
 
+-------------------create and run pyton file-----------------
 
+created trainedmodel.py to put important lines of code from the .ipynb file(jupiter notebook)
+
+run files: python .\trainedmodel.py
+
+------------pickle--------------------
 
 
 
