@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 import pickle
 
@@ -19,7 +19,9 @@ def hello_world():
 
     sampleOutputProbability1 = clf.predict_proba([sampleInput1])[0][1] #to get the probability
     print (sampleOutputProbability1)
-    return 'Hello Sangam!' + str(sampleOutputProbability1)
+
+    return render_template('index.html')
+    #return 'Hello Sangam!' + str(sampleOutputProbability1) + str(sampleOutputPrediction1)
 
 if __name__ == "__main__":
     app.run(debug=True)
