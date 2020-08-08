@@ -45,13 +45,14 @@
     </div>
 
 <!--------------------------------------FORM-------------------------------------->
+
 <div class="container-fluid px-0 py-2"></div>
 <div class="container-fluid px-0 py-1 font-weight-bold text-center h5">Please Fill Patient's Details</div>
 <div class="container border border-primary rounded px-4 py-2">
-    <form>
+    <form action='/' method="POST">
         <div class="form-group">
-            <label for="fullname">FULL NAME</label>
-            <input type="text" class="form-control" id="fullname" placeholder="ENTER FULL NAME">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
         </div>
 
         <div class="form-row ">
@@ -69,12 +70,12 @@
         <div class="form-row ">
             <div class="form-group col-md-6">
                 <label for="age">Age</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="102"> 
+                <input type="number" class="form-control" id="age" name="age" min="1" max="102" placeholder="Please be specific"> 
             </div>
-        <div class="form-group col-md-6">
-            <label for="temperature">Body Temperature</label>
-            <input type="number" class="form-control" id="temperature" name="temperature" min="95" max="106"> 
-        </div>
+            <div class="form-group col-md-6">
+                <label for="fever">Body Temperature</label>
+                <input type="number" class="form-control" id="fever" name="fever" min="95" max="106" placeholder="In °F"> 
+            </div>
         </div>
 
         <fieldset class="form-group">
@@ -82,14 +83,14 @@
                 <legend class="col-form-label col-sm-2 pt-0">Body Pain</legend>
                 <div class="col-sm-2">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="bodypain" id="bodypain1" value="option1">
-                        <label class="form-check-label" for="bodypain">
+                        <input class="form-check-input" type="radio" name="pain" id="pain1" value="1">
+                        <label class="form-check-label" for="pain1">
                             Yes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="bodypain" id="bodypain0" value="option2" checked>
-                        <label class="form-check-label" for="gridRadios2">
+                        <input class="form-check-input" type="radio" name="pain" id="pain0" value="0" checked>
+                        <label class="form-check-label" for="pain0">
                             No
                         </label>
                     </div>
@@ -97,14 +98,14 @@
                 <legend class="col-form-label col-sm-2 pt-0">Running Nose</legend>
                 <div class="col-sm-2">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="runningnose" id="runningnose1" value="option1">
-                        <label class="form-check-label" for="runningnose1">
+                        <input class="form-check-input" type="radio" name="noseRunning" id="noseRunning1" value="1">
+                        <label class="form-check-label" for="noseRunning1">
                             Yes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="runningnose" id="runningnose0" value="option2" checked>
-                        <label class="form-check-label" for="runningnose0">
+                        <input class="form-check-input" type="radio" name="noseRunning" id="noseRunning0" value="0" checked>
+                        <label class="form-check-label" for="noseRunning0">
                             No
                         </label>
                     </div>
@@ -112,14 +113,14 @@
                 <legend class="col-form-label col-sm-2 pt-0">Breathing Difficulty </legend>
                 <div class="col-sm-2">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
-                        <label class="form-check-label" for="gridRadios1">
+                        <input class="form-check-input" type="radio" name="breatingDifficulty" id="breatingDifficulty1" value="1" >
+                        <label class="form-check-label" for="breatingDifficulty1">
                             Yes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" checked>
-                        <label class="form-check-label" for="gridRadios2">
+                        <input class="form-check-input" type="radio" name="breatingDifficulty" id="breatingDifficulty0" value="0" checked>
+                        <label class="form-check-label" for="breatingDifficulty0">
                             No
                         </label>
                     </div>

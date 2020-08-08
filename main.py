@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 import pickle
 
@@ -9,17 +9,27 @@ clf = pickle.load(file)
 
 file.close()
 
-@app.route('/')
+@app.route('/', methods = ["GET","POST"])
 def hello_world():
-    #inference code
-    sampleInput1 = [100.3223, 1, 23, 0, 1]
+    
+    if request.method == 'POST':
+        myDict = request.form
+        fever = int(myDict['fever'])
+        age = int(myDict['age'])
+        pain = int(myDict['pain'])
+        noseRunning = int(myDict['noseRunning'])
+        breatingDifficulty = int(myDict['breatingDifficulty'])
 
-    sampleOutputPrediction1 = clf.predict([sampleInput1]) #to get the prediction
-    print (sampleOutputPrediction1)
+        #inference code
+        sampleInput = [fever, pain, age, noseRunning, breatingDifficulty]
 
-    sampleOutputProbability1 = clf.predict_proba([sampleInput1])[0][1] #to get the probability
-    print (sampleOutputProbability1)
+        OutputPrediction = clf.predict([sampleInput]) #to get the prediction
+        print (OutputPrediction)
+ 
+        OutputProbability = clf.predict_proba([sampleInput])[0][1] #to get the probability
+        print (OutputProbability)
 
+        return render_template('output.html', inf= round(OutputProbability*100))
     return render_template('index.html')
     #return 'Hello Sangam!' + str(sampleOutputProbability1) + str(sampleOutputPrediction1)
 
